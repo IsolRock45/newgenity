@@ -945,11 +945,3 @@ func getEnvOrDefault(key, defaultVal string) string {
 	}
 	return defaultVal
 }
-
-func init() {
-	sql.Register("sqlite3", &sqlite3.SQLiteDriver{
-		ConnectHook: func(conn *sqlite3.SQLiteConn) error {
-			return nil
-		},
-	})
-}
