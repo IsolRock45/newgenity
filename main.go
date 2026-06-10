@@ -14,7 +14,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"math/rand/v2"
+	mr "math/rand/v2"
 	"net"
 	"net/http"
 	"net/url"
@@ -157,7 +157,7 @@ func main() {
 			if len(proxyURLs) == 0 {
 				return nil, nil
 			}
-			return proxyURLs[rand.IntN(len(proxyURLs))], nil
+			return proxyURLs[mr.IntN(len(proxyURLs))], nil
 		},
 		DialContext: (&net.Dialer{
 			Timeout:   15 * time.Second,
